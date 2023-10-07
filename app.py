@@ -12,8 +12,9 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     print(type(data))
-    print(data)
-    return render_template('Filtertable.html',  users=data)
+    tempdata=list(map(lambda x:[x[0],x[1],x[2],'www.google.com'] ,data))
+    print(tempdata)
+    return render_template('Filtertable.html',  users=tempdata)
 
 if __name__ == '__main__':
     app.run(debug=True)
